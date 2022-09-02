@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://borhane-blili-hamelin.netlify.app/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Borhane Blili-Hamelin, PhD"
