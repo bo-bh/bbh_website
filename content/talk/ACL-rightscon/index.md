@@ -7,7 +7,7 @@ date_end: "2022-06-10T10:15:59-06:00"
 draft: false
 event: RightsCon 2022
 event_url: https://rightscon.summit.tc/
-excerpt: A workshop from Accountability Case Labs about the place of the courts in the algorithmic accountability space.
+excerpt: A RightsCon 2022 workshop from Accountability Case Labs about the place of the courts in the algorithmic accountability space.
 featured: true
 layout: single
 links:
