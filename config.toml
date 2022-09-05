@@ -33,7 +33,7 @@ enableEmoji = true
   description = "Borhane Blili-Hamelin, PhD"
   favicon = "/img/favicon.ico"
   logo = "/img/blogophonic-mark-dark.png"
-  mainSections = ["blog", "project", "talk"]
+  mainSections = ["project", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -139,7 +139,7 @@ enableEmoji = true
     
   # Configure footer  
   [[menu.footer]]
-    name = "License"
+    name = "Credits"
     title = "License"
     url = "/license/"
     weight = 1
@@ -148,11 +148,6 @@ enableEmoji = true
     title = "Contact form"
     url = "/contact/"
     weight = 2
-  [[menu.footer]]
-    name = "Contributors"
-    title = "Contributors"
-    url = "/contributors/"
-    weight = 3
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
 [privacy]

@@ -10,7 +10,7 @@ intro: |
   
   I founded [Accountability Case Labs](https://docs.google.com/document/d/1wi-OsM4l2HCn-F0L_PomqkpncT5y9DCQF6db2eMwsCY/edit?usp=sharing) to tackle silos in the algorithmic accountability space through participatory workshops and research.
   
-  I’m fascinated by the ML research community’s approaches to self-governance, through both scholarly self-examination and processes like ethics review. [My recent paper, co-authored with Leif Hancox-Li, examines overlooked structural similarities between IQ and ML benchmarks. This enables us to unlock lessons from feminist philosophy of science scholarship that need to be considered by the ML benchmark community.](https://doi.org/10.48550/arXiv.2209.00692)
+  I’m fascinated by the ML research community’s approaches to self-governance, through both scholarly self-examination and processes like ethics review. [My recent paper, co-authored with Leif Hancox-Li](https://doi.org/10.48550/arXiv.2209.00692), examines overlooked structural similarities between IQ and ML benchmarks. This enables us to unlock lessons from feminist philosophy of science scholarship that need to be considered by the ML benchmark community.
   
   I believe that people with PhDs can have a transformative impact outside of academia. During the pandemic, this led me to collaborate on open workshops, grants, networking events, and open resources aimed at the Post Academic community. I’m currently co-director of [Open Post Academics](https://openpostac.org).
   
@@ -18,7 +18,7 @@ intro: |
   
   I hold a PhD in Philosophy from Columbia University. 
   
-  In my spare time, I make musical instruments misbehave.
+  In my spare time, I love making musical instruments misbehave.
   
   My native language is French. I’m Québecois and Tunisian. I’m currently based in New York City. 
 show_outro: false

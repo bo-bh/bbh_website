@@ -1,11 +1,12 @@
 ---
-description: The "kitchen sink," if you will ... a page showing examples of type and
-  page elements included in this template.
+description: Website credits and license
 draft: false
 layout: standard
 show_title_as_headline: true
-title: License
+title: Credits and License
 ---
+
+This website was built by Borhane Blili-Hamelin, using the [Hugo Apéro](https://hugo-apero-docs.netlify.app/) theme. If you like the design, I highly recommend building sites with this theme. It's extremely well documented, flexible, and a joy to work with.
 
 My [blog posts](/post/) are released under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 

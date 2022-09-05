@@ -1,7 +1,7 @@
 ---
-author: The R Markdown Team @RStudio
+author: Borhane Blili-Hamelin
 cascade:
-  author: The R Markdown Team @RStudio
+  author: Borhane Blili-Hamelin
   show_author_byline: true
   show_comments: true
   show_post_date: true
@@ -9,19 +9,19 @@ cascade:
     show_sidebar_adunit: false
     text_link_label: View recent posts
     text_link_url: /blog/
-description: "UNDER CONSTRUCTION, STAY TUNED!"
+description: "Looking forward to sharing my thoughts on this page. Stay tuned!"
 layout: list-sidebar
 show_author_byline: true
 show_button_links: false
 show_post_date: true
 show_post_thumbnail: true
 sidebar:
-  author: The R Markdown Team @RStudio
-  description: "UNDER CONSTRUCTION, STAY TUNED!"
+  author: Borhane Blili-Hamelin, PhD
+  description: "Stay tuned! (Image by [Vincent Schwenk](https://vincentschwenk.de) on [Unsplash](https://unsplash.com/photos/pRuLk09dyho))"
   show_sidebar_adunit: true
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
-  title: UNDER CONSTRUCTION, STAY TUNED!
+  
 thumbnail_left: true
 title: Blog
 ---
