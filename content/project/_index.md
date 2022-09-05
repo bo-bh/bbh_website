@@ -1,5 +1,5 @@
 ---
-author: The R Markdown Team @RStudio
+author: Borhane Blili-Hamelin
 cascade:
   show_author_byline: true
   show_comments: false
@@ -8,20 +8,20 @@ cascade:
     show_sidebar_adunit: true
     text_link_label: View all projects
     text_link_url: /project/
-description: UNDER CONSTRUCTION, STAY TUNED!
+description: Projects I've collaborated on on topics like ML ethics, algorithmic accountability, and cross-disciplinarity in data science.
 layout: list-grid
 show_author_byline: true
 show_button_links: false
 show_post_date: false
 show_post_thumbnail: true
 sidebar:
-  author: The R Markdown Team @RStudio
-  description: "UNDER CONSTRUCTION, STAY TUNED!"
+  author: Borhane Blili-Hamelin
+  description: "My recent projects"
   show_sidebar_adunit: false
   text_link_label: ""
   text_link_url: ""
-  title: UNDER CONSTRUCTION, STAY TUNED!
-title: UNDER CONSTRUCTION, STAY TUNED!
+  title: My recent projects
+title: My recent projects
 ---
 
 ** No content for the project index. This file provides front matter for the blog including the layout and boolean options. **
