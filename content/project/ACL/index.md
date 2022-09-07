@@ -6,14 +6,14 @@ categories:
 - Participatory research
 date: "2022-09-01"
 draft: false
-excerpt: An open community tackling silos in the algorithmic accountability space through participatory workshops and research.
+excerpt: An open community tackling silos in the algorithmic accountability space through participatory workshops and research
 
 layout: single
 links:
 - icon: door-open
   icon_pack: fas
-  name: Our activities
-  url: https://docs.google.com/document/d/1wi-OsM4l2HCn-F0L_PomqkpncT5y9DCQF6db2eMwsCY/edit?usp=sharing
+  name: ACL Website
+  url: https://accountabilitycaselabs.xyz/
 
 subtitle: A participatory approach to challenges in the algorithmic accountability space
 tags:
@@ -23,19 +23,29 @@ tags:
 title: Accountability Case Labs
 ---
 
-In 2021, I founded [Accountability Case Labs](https://docs.google.com/document/d/1wi-OsM4l2HCn-F0L_PomqkpncT5y9DCQF6db2eMwsCY/edit?usp=sharing) to tackle silos in the algorithmic accountability space through participatory workshops and research. 
+In 2021, I founded [Accountability Case Labs (ACL)](https://accountabilitycaselabs.xyz/) to tackle silos in the algorithmic accountability space through participatory workshops and research. 
 
-Accountability Case Labs is an open community dedicated to connecting and building shared insights among algorithmic accountability practitioners. 
+Our mission is to connect and build common strategic insights across the full range of technical and social experts, researchers, builders, and advocates who care about AI accountability
 
-During our seeding phase (Fall 2021 to Summer 2022 — as part of the first cohort of the MozFest Civil Society Actors for Trustworthy AI), our goals were to co-create our community norms & collaborative practices, to iterate on our MVP of case study based participatory workshops, and to conduct exploratory research that helps identify our next steps. 
+We believe that participatory workshops have the power to help bridge gaps and silos among algorithmic accountability practitioners.
 
-To do so, we conducted
-* 9 public facing participatory events (4 participatory meetups & 5 workshops, including 2 at MozFest 2022 and 1 at RightsCon 2022)
-* A community driven agenda setting process (including identifying, researching case studies, and writing conference applications)
-* 5 rounds of community driven workshop design
-* Exploratory research (qualitative interviews (Dec 2021-Jan 2022); survey research (Feb 2022-March 2022))
+  We co-create unique experiences that empower meaningful cross-disciplinary participation. 
 
-[To stay tuned about our next steps, sign up for our mailing list here.](https://forms.gle/5KvPCHECyjPHNUyX7) 
+  During our first year (2021-2022), we co-designed two unique workshop formats. 
+
+  (1) We built our MVP of three case study based workshops. They each centered case studies of impactful actions we find worth examining for algorithmic accountability practitioners: Twitter’s 2021 Bias Bounty, and the case of a Frye Motion involving ShotSpotter in Illinois courts. We used facilitation techniques inspired by [Open Post Academics’ participatory cross-disciplinary workshops](https://doi.org/10.5281/zenodo.6026972), by speculative design, and by community led storytelling. These workshops each culminated in group reflection on shared insights.
+
+  (2) We also built workshops around our own exploratory research data. From December 2021 to March 2022, ACL conducted research on algorithmic accountability practitioners through interviews and a survey. We wanted to see if we could design participatory workshops that invite participants of different background to collaborate on insights about qualitative interview and quantitative survey data. This resulted in two workshops including one at MozFest.
+
+  We started as part of the first cohort of the [MozFest Civil Society Actors for Trustworthy AI in 2021-2022](https://foundation.mozilla.org/en/blog/making-trustworthy-ai-real/). 
+  
+  We held two workshops at [Mozilla Festival 2022](https://www.mozillafestival.org/en/), and one at [RightsCon 2022](https://www.rightscon.org).
+
+  We are committed to openness. We strive to release all our outputs under CC BY 4.0 attribution licenses.
+   
+  You can read a detailed overview of our activities during our first year on the [document linked here.](https://docs.google.com/document/d/1wi-OsM4l2HCn-F0L_PomqkpncT5y9DCQF6db2eMwsCY/edit?usp=sharing) 
+
+To stay tuned about our next steps and our Fall 2022 workshops, [sign up for our mailing list here.](https://forms.gle/5KvPCHECyjPHNUyX7) 
 
 ## Our Contributors
 
