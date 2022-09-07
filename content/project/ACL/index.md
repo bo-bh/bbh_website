@@ -23,9 +23,11 @@ tags:
 title: Accountability Case Labs
 ---
 
-In 2021, I founded [Accountability Case Labs (ACL)](https://accountabilitycaselabs.xyz/) to tackle silos in the algorithmic accountability space through participatory workshops and research. 
+In 2021, I founded [Accountability Case Labs (ACL)](https://accountabilitycaselabs.xyz/). 
 
-Our mission is to connect and build common strategic insights across the full range of technical and social experts, researchers, builders, and advocates who care about AI accountability
+ACL is an open community exploring participatory approaches to challenges in the algorithmic accountability space.
+
+Our mission is to connect and build common strategic insights across the full range of technical and social experts, researchers, builders, and advocates who care about AI accountability.
 
 We believe that participatory workshops have the power to help bridge gaps and silos among algorithmic accountability practitioners.
 
