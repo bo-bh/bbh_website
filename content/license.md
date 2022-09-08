@@ -18,3 +18,5 @@ All text on this website is under a [Creative Commons Attribution-ShareAlike 4.0
 ## Image credits
 
 All images and visuals are the property of their respective owners.
+
+The turtle logo (top left corner of the site) is by [Assia Benkerroum and can be found on Flaticon](https://www.flaticon.com/free-icon/turtle_8404968?term=turtle&page=1&position=83&page=1&position=83&related_id=8404968&origin=tag).
