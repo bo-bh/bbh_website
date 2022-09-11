@@ -30,7 +30,7 @@ enableEmoji = true
 [params]
   orgName = "Borhane Blili-Hamelin"
   orgLocal = "Anywhere"
-  description = "Borhane Blili-Hamelin, PhD"
+  description = "Borhane Blili-Hamelin Personal Website"
   favicon = "/img/turtle.png"
   logo = "/img/turtle.png"
   mainSections = ["project", "talk"]
