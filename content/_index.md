@@ -10,7 +10,7 @@ show_action_link: true
 show_social_links: true
 subtitle: (he/him) ML Ethics | Consulting | Research | Accountability Case Labs | BABL AI
 text_align_left: false
-title: Borhane Blili-Hamelin, PhD
+title: Borhane Blili Hamelin, PhD
 type: home
 ---
 
