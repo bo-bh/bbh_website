@@ -6,10 +6,8 @@ use_featured: false # if false, use most recent by date
 number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: |
-  Drawing on my background in philosophy, I take a cross-disciplinary and historically informed view of the present, past and future of ethics, rights, and values, and how they interact with socio-technical systems.
-  
+  To me, there is a very thin line between inquiry into ethical and social justice problems, and practices that legitimize the imposition of ethical, social and political preferences onto others — i.e. assertions of power. Drawing on my background in philosophy, I develop approaches to rights, values, and social, epistemic and political justice questions about socio-technical systems that attempt to take that thin line into account.
   I founded [Accountability Case Labs](https://accountabilitycaselabs.xyz/) to tackle silos in the algorithmic accountability space through participatory workshops and research.
-  
   I’m fascinated by the ML research community’s approaches to self-governance, through both scholarly self-examination and processes like ethics review. [My recent paper, co-authored with Leif Hancox-Li](https://doi.org/10.48550/arXiv.2209.00692), examines overlooked structural similarities between IQ and ML benchmarks. This enables us to unlock lessons from feminist philosophy of science scholarship that need to be considered by the ML benchmark community.
   
   I believe that people with PhDs can have a transformative impact outside of academia. During the pandemic, this led me to collaborate on open workshops, grants, networking events, and open resources aimed at the Post Academic community. I’m currently co-director of [Open Post Academics](https://openpostac.org).
