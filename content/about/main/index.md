@@ -6,7 +6,7 @@ use_featured: false # if false, use most recent by date
 number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: |
-  Drawing on my PhD in philosophy, my community building and participatory research expertise, I build cross-disciplinary, multi-stakeholder frameworks for mitigating harms and protecting rights in AI ethics and governance.  
+  Drawing on my PhD in philosophy, my community building and participatory research expertise, I build cross-disciplinary, multi-stakeholder frameworks for mitigating harms and protecting rights in AI ethics and governance.
   I founded [Accountability Case Labs](https://accountabilitycaselabs.xyz/), an open community dedicated to participatory approaches to challenges in the algorithmic accountability and governance space.
   I’m fascinated by the ML research community’s approaches to self-governance, through both scholarly self-examination and processes like ethics review. [My recent paper, co-authored with Leif Hancox-Li](https://doi.org/10.48550/arXiv.2209.00692), examines overlooked structural similarities between IQ and ML benchmarks. This enables us to unlock lessons from feminist philosophy of science scholarship that need to be considered by the ML benchmark community.
   I believe that people with PhDs can have a transformative impact outside of academia. During the pandemic, this led me to collaborate on open workshops, grants, networking events, and open resources aimed at the Post Academic community. I’m currently co-director of [Open Post Academics](https://openpostac.org).
