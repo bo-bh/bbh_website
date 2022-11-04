@@ -2,7 +2,7 @@
 action_label: Read More &rarr;
 action_link: /about
 action_type: text
-description: I’m a consultant, researcher, and organizer focused on AI ethics. I draw from my PhD in philosophy, stakeholder engagement, and my algorithmic accountability expertise to help organizations mitigate harms and protect rights around algorithmic systems. My goal is to make AI governance more cross-disciplinary, reflective, and empowering for impacted communities.
+description: I’m a consultant, researcher, and organizer focused on AI ethics. I help organizations mitigate harms and protect rights through AI ethics and risk management. I draw from my PhD in philosophy and my expertise in algorithmic accountability and stakeholder engagement. My focus is making AI governance more cross-disciplinary, reflective, and empowering for impacted communities.
 image_left: true
 images:
 - img/BBH_front.jpeg
