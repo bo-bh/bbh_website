@@ -97,7 +97,15 @@ enableEmoji = true
       icon      = "twitter" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://twitter.com/Borhane_B_H"
-  
+  [[params.social]]
+      icon = "mastodon"
+      icon_pack = "fab"
+      url = "https://dair-community.social/@borhane"
+    #  <a rel="me" href="https://dair-community.social/@borhane">Mastodon</a>
+  [[params.social]]
+      icon      = "cv" 
+      icon_pack = "ai"
+      url       = "https://docs.google.com/document/d/1GOPSAb5Z3XNsExwiqcSdxRM8pFKx1JlpWoFJVjjNpP4/edit?usp=sharing"
 
 [taxonomies]
   category = "categories"
