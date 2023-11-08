@@ -8,7 +8,7 @@ images:
 - img/BBH_front.jpeg
 show_action_link: true
 show_social_links: true
-subtitle: (he/him) ML Ethics | Consulting | Research | AVID | Accountability Case Labs | BABL AI
+subtitle: (he/him) ML Ethics | Research | Consulting | AI Vulnerability Database | BABL AI
 text_align_left: false
 title: Borhane Blili Hamelin, PhD
 type: home
