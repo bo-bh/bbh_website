@@ -1,7 +1,7 @@
 ---
 ## Configure sidebar content in narrow column
 author: "Borhane Blili-Hamelin, PhD"
-role: "(he/him) ML Ethics | Consulting | Research | Accountability Case Labs | BABL AI"
+role: "(he/him) ML Ethics | Consulting | Research | ARVA |  AVID | BABL AI"
 avatar_shape: rounded # circle, square, rounded, leave blank to exclude
 show_social_links: true # specify social accounts in site config
 audio_link_label: "How to say my name" # leave blank to exclude
