@@ -14,7 +14,7 @@ links:
 - icon: chalkboard
   icon_pack: fas
   name: Slides
-  url: http://pitch.com/public/6f14c519-242c-4760-948d-a3a6016d0c07
+  url: https://pitch.com/public/6f14c519-242c-4760-948d-a3a6016d0c07
 - icon: paragraph
   icon_pack: fas
   name: Agenda and discussion notes

@@ -8,7 +8,7 @@ title: Contributors
 
 Thank you to all the folks who have contributed both technical and creative skills to this project:
 
-+ [Desirée De Leon :giraffe:](http://desiree.rbind.io/) (designed 5 of the custom color themes, made illustrations for the workshop, and provided general aesthetic feedback along the way)
++ [Desirée De Leon :giraffe:](https://desiree.rbind.io/) (designed 5 of the custom color themes, made illustrations for the workshop, and provided general aesthetic feedback along the way)
 
 + [Garrick Aden-Buie :mage:](https://www.garrickadenbuie.com/) (debugged headroom.js and lent his panelset.js code to the theme)
 
@@ -16,7 +16,7 @@ Thank you to all the folks who have contributed both technical and creative skil
 
 + [Maëlle Salmon :fishing_pole_and_fish:](https://masalmon.eu/) (help with features, and naming the theme [Hugo Apéro](https://hugo-apero.netlify.app/)!)
 
-+ [Christophe Dervieux :crayon:](http://cderv.rbind.io/) (thinking through blogdown/Hugo intricacies and syntax highlighting)
++ [Christophe Dervieux :crayon:](https://cderv.rbind.io/) (thinking through blogdown/Hugo intricacies and syntax highlighting)
 
 + [Yihui Xie :martial_arts_uniform:](https://yihui.org/) (for the blogdown package, getting me hooked on Hugo, and helping me with layout code inspired by his many Hugo themes)
 
