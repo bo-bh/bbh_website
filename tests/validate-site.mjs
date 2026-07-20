@@ -75,7 +75,7 @@ test("local assets exist and production config publishes only the static site", 
   }
 
   assert.match(netlify, /publish\s*=\s*"site"/);
-  assert.doesNotMatch(netlify, /command\s*=/);
+  assert.match(netlify, /command\s*=\s*"npm test"/);
   assert.match(javascript, /"about", "writing", "speaking", "press", "contact"/);
 });
 
