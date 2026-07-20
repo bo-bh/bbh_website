@@ -1,0 +1,7 @@
+{
+  "name": "borhane-xyz",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/validate-site.mjs"
+  }
+}
