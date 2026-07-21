@@ -69,8 +69,14 @@ test("publication and speaking curation matches approved decisions", () => {
 test("biography and podcast copy match approved presentation", () => {
   const about = section("about", "writing");
   const dataAndSocietyLinks = about.match(/<a href="https:\/\/datasociety\.net\/">Data &amp; Society<\/a>/g) ?? [];
+  const magicGrantLinks = about.match(/<a href="https:\/\/brown\.columbia\.edu\/announcing-2023-magic-grants\/">Magic Grant<\/a>/g) ?? [];
 
   assert.equal(dataAndSocietyLinks.length, 1);
+  assert.equal(magicGrantLinks.length, 1);
+  assert.match(
+    about,
+    /I also helped lead the <a href="https:\/\/avidml\.org">AI Risk and Vulnerability Alliance \(ARVA\)<\/a>, where I directed its research partnership with <a href="https:\/\/datasociety\.net\/">Data &amp; Society<\/a>\. That work was funded through a <a href="https:\/\/brown\.columbia\.edu\/announcing-2023-magic-grants\/">Magic Grant<\/a> I received from the Brown Institute for Media Innovation \(Columbia × Stanford\), with our red-teaming research supported by Omidyar Network\./
+  );
   assert.match(about, /My work has appeared through ICML, FAccT, AIES, Data &amp; Society, and IEEE-USA\./);
   assert.match(html, /<h3>Rethinking Intelligence in the Age of AI<\/h3>/);
   assert.doesNotMatch(html, /<h3>Borhane Blili-Hamelin: Rethinking Intelligence in the Age of AI<\/h3>/);
