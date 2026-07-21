@@ -128,6 +128,10 @@ test("locked type, colors, mobile navigation, and reduced motion remain intact",
   }
   assert.match(css, /font-family: "IBM Plex Mono"/);
   assert.doesNotMatch(css, /Newsreader|--read-family|--disp-family/);
+  assert.ok(existsSync(join(site, "fonts/ibm-plex-mono-latin-600-normal.woff2")));
+  assert.match(css, /font-weight: 600;[\s\S]*?ibm-plex-mono-latin-600-normal\.woff2/);
+  assert.match(css, /\.sq-record-lead \{[^}]*font-size: clamp\(1\.05rem, 1\.4vw, 1\.2rem\);[^}]*font-weight: 500;/);
+  assert.match(css, /\.sq-record-quote p \{[^}]*font-size: clamp\(1\.35rem, 2\.5vw, 2rem\);[^}]*font-weight: 600;/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*?\.sequence-brand \{ display: none; \}/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*?\.sq-record-link \{ grid-template-columns: 1fr;/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
