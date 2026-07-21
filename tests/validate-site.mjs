@@ -27,9 +27,9 @@ test("approved information architecture and content are present", () => {
   const nav = html.match(/<nav aria-label="Page sections">([\s\S]*?)<\/nav>/)?.[1] ?? "";
   assert.deepEqual(
     [...nav.matchAll(/href="#([^"]+)"/g)].map((match) => match[1]),
-    ["about", "writing", "speaking", "contact"]
+    ["about", "writing", "speaking", "press", "contact"]
   );
-  assert.doesNotMatch(nav, />Press</);
+  assert.match(nav, />Press</);
   assert.doesNotMatch(html, /Copy biography/i);
   assert.match(html, /PhD · he\/him/);
   assert.match(html, /I practice AI risk management inside a large bank\. Everything else I do, from research to auditing to policy, comes back to improving the practice itself\./);
@@ -52,7 +52,22 @@ test("section numbering and curated record counts are exact", () => {
   assert.doesNotMatch(html, /sequence-section-number">05</);
   assert.equal(recordCount(writing), 14);
   assert.equal(recordCount(speaking), 15);
-  assert.equal(recordCount(press), 1);
+  assert.equal(recordCount(press), 0);
+  assert.match(press, /<figure class="sq-record">/);
+});
+
+test("press is a single linked pull-quote card", () => {
+  const press = section("press", "contact");
+  const links = [...press.matchAll(/<a\b[^>]*href="([^"]+)"/g)];
+
+  assert.equal(links.length, 1);
+  assert.equal(links[0][1], "https://www.washingtonpost.com/technology/2024/03/05/ai-research-letter-openai-meta-midjourney/");
+  assert.match(press, /<a class="sq-record-link"/);
+  assert.match(press, /Shaming shouldn’t be the only way independent researchers get heard\./);
+  assert.match(press, /We have a broken oversight ecosystem\./);
+  assert.match(press, /&lsquo;gotcha&rsquo;/);
+  assert.match(press, /The Washington Post/);
+  assert.match(press, /researcher safe harbor · March 2024/);
 });
 
 test("publication and speaking curation matches approved decisions", () => {
@@ -112,6 +127,8 @@ test("locked type, colors, mobile navigation, and reduced motion remain intact",
     assert.match(css.toLowerCase(), new RegExp(color));
   }
   assert.match(css, /font-family: "IBM Plex Mono"/);
+  assert.doesNotMatch(css, /Newsreader|--read-family|--disp-family/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*?\.sequence-brand \{ display: none; \}/);
+  assert.match(css, /@media \(max-width: 820px\)[\s\S]*?\.sq-record-link \{ grid-template-columns: 1fr;/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
 });
