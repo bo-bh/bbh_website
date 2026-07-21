@@ -64,6 +64,16 @@ test("publication and speaking curation matches approved decisions", () => {
   assert.match(html, /youtube\.com\/watch\?v=RKVsDcFQfIY/);
 });
 
+test("biography and podcast copy match approved presentation", () => {
+  const about = section("about", "writing");
+  const dataAndSocietyLinks = about.match(/<a href="https:\/\/datasociety\.net\/">Data &amp; Society<\/a>/g) ?? [];
+
+  assert.equal(dataAndSocietyLinks.length, 1);
+  assert.match(about, /My work has appeared through ICML, FAccT, AIES, Data &amp; Society, and IEEE-USA\./);
+  assert.match(html, /<h3>Rethinking Intelligence in the Age of AI<\/h3>/);
+  assert.doesNotMatch(html, /<h3>Borhane Blili-Hamelin: Rethinking Intelligence in the Age of AI<\/h3>/);
+});
+
 test("local assets exist and production config publishes only the static site", () => {
   const localAssets = [...html.matchAll(/(?:href|src)="(\/[^"]+)"/g)]
     .map((match) => match[1])
