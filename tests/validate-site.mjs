@@ -74,6 +74,16 @@ test("biography and podcast copy match approved presentation", () => {
   assert.doesNotMatch(html, /<h3>Borhane Blili-Hamelin: Rethinking Intelligence in the Age of AI<\/h3>/);
 });
 
+test("page title is concise and the retired turtle favicon is absent", () => {
+  const approvedTitle = "Borhane Blili-Hamelin · AI Risk Management";
+
+  assert.match(html, new RegExp(`<title>${approvedTitle}<\\/title>`));
+  assert.match(html, new RegExp(`<meta property="og:title" content="${approvedTitle}">`));
+  assert.match(html, new RegExp(`<meta name="twitter:title" content="${approvedTitle}">`));
+  assert.doesNotMatch(html, /rel="icon"/);
+  assert.equal(existsSync(join(site, "favicon.png")), false);
+});
+
 test("local assets exist and production config publishes only the static site", () => {
   const localAssets = [...html.matchAll(/(?:href|src)="(\/[^"]+)"/g)]
     .map((match) => match[1])
