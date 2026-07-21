@@ -32,7 +32,7 @@ test("approved information architecture and content are present", () => {
   assert.doesNotMatch(nav, />Press</);
   assert.doesNotMatch(html, /Copy biography/i);
   assert.match(html, /PhD · he\/him/);
-  assert.match(html, /I work where AI risk management meets technical practice\./);
+  assert.match(html, /I practice AI risk management inside a large bank\. Everything else I do, from research to auditing to policy, comes back to improving the practice itself\./);
   assert.match(html, /mailto:borhane\.blilihamelin@gmail\.com/);
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/borhane\//);
 });
