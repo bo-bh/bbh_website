@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -eu
+
+# Prefer the native system Git. An obsolete Intel Homebrew Git may appear first
+# in PATH on this Mac and fails in non-interactive agent shells.
+PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+if ! git symbolic-ref --quiet HEAD >/dev/null; then
+  echo "Refusing to publish from a detached HEAD." >&2
+  exit 1
+fi
+
+if [ -n "$(git status --porcelain)" ]; then
+  echo "Refusing to publish: commit or stash the working-tree changes first." >&2
+  exit 1
+fi
+
+npm test
+
+# Avoid spawning automatic maintenance during this short release operation.
+git -c maintenance.auto=false fetch origin main
+
+if ! git merge-base --is-ancestor origin/main HEAD; then
+  echo "Refusing to publish: the current commit is not a fast-forward of origin/main." >&2
+  echo "Bring the latest origin/main into this branch, resolve it, and run this helper again." >&2
+  exit 1
+fi
+
+head_sha=$(git rev-parse HEAD)
+git -c maintenance.auto=false push origin "$head_sha:refs/heads/main"
+
+echo "Published $head_sha to origin/main without switching branches."
