@@ -107,14 +107,54 @@ test("biography and podcast copy match approved presentation", () => {
   assert.doesNotMatch(html, /<h3>Borhane Blili-Hamelin: Rethinking Intelligence in the Age of AI<\/h3>/);
 });
 
-test("page title is concise and the retired turtle favicon is absent", () => {
+test("page title is concise and the new glyph favicon replaces the turtle", () => {
   const approvedTitle = "Borhane Blili-Hamelin · AI Risk Management";
 
   assert.match(html, new RegExp(`<title>${approvedTitle}<\\/title>`));
   assert.match(html, new RegExp(`<meta property="og:title" content="${approvedTitle}">`));
   assert.match(html, new RegExp(`<meta name="twitter:title" content="${approvedTitle}">`));
-  assert.doesNotMatch(html, /rel="icon"/);
+  assert.match(html, /<link rel="icon" href="\/favicon\.svg\?v=20260722" type="image\/svg\+xml">/);
+  assert.match(html, /<link rel="icon" href="\/favicon\.ico\?v=20260722" sizes="any">/);
+  assert.match(html, /<link rel="apple-touch-icon" href="\/apple-touch-icon\.png">/);
   assert.equal(existsSync(join(site, "favicon.png")), false);
+  for (const asset of [
+    "favicon.svg",
+    "favicon.ico",
+    "favicon-16.png",
+    "favicon-32.png",
+    "favicon-48.png",
+    "apple-touch-icon.png",
+    "icon-512.png"
+  ]) {
+    assert.ok(existsSync(join(site, asset)), `Missing favicon asset: ${asset}`);
+  }
+
+  const faviconSvg = readFileSync(join(site, "favicon.svg"), "utf8");
+  assert.match(faviconSvg, /fill="#7A6CE8"/);
+  assert.match(faviconSvg, /fill="#25281F"/);
+  assert.doesNotMatch(faviconSvg, /<text\b|font-family/);
+});
+
+test("wordmark and animated hero name match the glyph-flair specification", () => {
+  assert.match(html, /<a class="sequence-brand wordmark" href="#top">borhane\.xyz<span class="wordmark-caret" aria-hidden="true">▌<\/span><\/a>/);
+  assert.doesNotMatch(html, />› borhane\.xyz</);
+  assert.match(html, /<h1 class="hero-name" tabindex="0" aria-label="Borhane Blili-Hamelin">/);
+  assert.match(html, /<span class="hero-name-glyphs" aria-hidden="true">/);
+  assert.match(html, /data-text="Borhane">Borhane/);
+  assert.match(html, /data-text="Blili-Hamelin">Blili-Hamelin/);
+
+  assert.match(css, /@keyframes markblink/);
+  assert.match(css, /@keyframes caretblink/);
+  assert.match(css, /\.sequence-hero h1 \{[^}]*line-height: 1;[^}]*letter-spacing: -\.025em;[^}]*font-weight: 300;[^}]*font-style: italic;/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.wordmark-caret \{ animation: none; opacity: 1; \}/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.hero-name-glyph \{ animation: none; transition: none; \}/);
+
+  assert.match(javascript, /const HERO_FRAME_MS = 62/);
+  assert.match(javascript, /const HERO_FRAMES_PER_CHARACTER = 2/);
+  assert.match(javascript, /const HERO_REPLAY_LIMIT_MS = 1500/);
+  assert.match(javascript, /mouseenter/);
+  assert.match(javascript, /IntersectionObserver/);
+  assert.match(javascript, /reducedMotion\.matches/);
 });
 
 test("local assets exist and production config publishes only the static site", () => {
