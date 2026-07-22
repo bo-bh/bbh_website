@@ -114,8 +114,8 @@ test("page title is concise and the new glyph favicon replaces the turtle", () =
   assert.match(html, new RegExp(`<title>${approvedTitle}<\\/title>`));
   assert.match(html, new RegExp(`<meta property="og:title" content="${approvedTitle}">`));
   assert.match(html, new RegExp(`<meta name="twitter:title" content="${approvedTitle}">`));
-  assert.match(html, /<link rel="icon" href="\/favicon\.svg\?v=20260722-r35" type="image\/svg\+xml">/);
-  assert.match(html, /<link rel="icon" href="\/favicon\.ico\?v=20260722-r35" sizes="any">/);
+  assert.match(html, /<link rel="icon" href="\/favicon\.svg\?v=20260722-r35-bold" type="image\/svg\+xml">/);
+  assert.match(html, /<link rel="icon" href="\/favicon\.ico\?v=20260722-r35-bold" sizes="any">/);
   assert.match(html, /<link rel="apple-touch-icon" href="\/apple-touch-icon\.png">/);
   assert.equal(existsSync(join(site, "favicon.png")), false);
   for (const asset of [
@@ -133,7 +133,8 @@ test("page title is concise and the new glyph favicon replaces the turtle", () =
   const faviconSvg = readFileSync(join(site, "favicon.svg"), "utf8");
   assert.match(faviconSvg, /fill="#7A6CE8"/);
   assert.match(faviconSvg, /fill="#25281F"/);
-  assert.match(faviconSvg, /data-source-font="Redaction 35 Regular"/);
+  assert.match(faviconSvg, /data-source-font="Redaction 35 Bold"/);
+  assert.match(faviconSvg, /data-spacing="natural"/);
   assert.doesNotMatch(faviconSvg, /<text\b|font-family/);
 });
 
