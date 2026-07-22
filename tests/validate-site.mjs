@@ -82,6 +82,8 @@ test("publication and speaking curation matches approved decisions", () => {
   assert.match(html, /Queer in AI at NeurIPS/);
   assert.match(html, /BABL AI: AI and Research Ethics/);
   assert.match(html, /youtube\.com\/watch\?v=RKVsDcFQfIY/);
+  assert.match(html, /Xoogler community panel · panelist with Jason Stanley and Mike Hsu/);
+  assert.doesNotMatch(html, /Xoogler community panel · panelist<\/p>/);
 });
 
 test("biography and podcast copy match approved presentation", () => {
