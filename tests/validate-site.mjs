@@ -66,7 +66,8 @@ test("press is a single linked pull-quote card", () => {
   assert.equal(links.length, 1);
   assert.equal(links[0][1], "https://www.washingtonpost.com/technology/2024/03/05/ai-research-letter-openai-meta-midjourney/");
   assert.match(press, /<a class="sq-record-link"/);
-  assert.match(press, /Shaming shouldn’t be the only way independent researchers get heard\./);
+  assert.match(press, /After a year building infrastructure for responsible disclosure of AI vulnerabilities at ARVA, I told The Washington Post that shaming shouldn't be the only way independent researchers get heard\. That's bad for the public, and bad for companies too:/);
+  assert.doesNotMatch(press, /<p class="sq-record-lead">Shaming shouldn’t be the only way independent researchers get heard\./);
   assert.match(press, /We have a broken oversight ecosystem\./);
   assert.match(press, /&lsquo;gotcha&rsquo;/);
   assert.match(press, /The Washington Post/);
