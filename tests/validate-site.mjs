@@ -27,10 +27,11 @@ test("approved information architecture and content are present", () => {
   const nav = html.match(/<nav aria-label="Page sections">([\s\S]*?)<\/nav>/)?.[1] ?? "";
   assert.deepEqual(
     [...nav.matchAll(/href="#([^"]+)"/g)].map((match) => match[1]),
-    ["about", "writing", "speaking", "press", "contact"]
+    ["speaking", "writing", "press", "about", "contact"]
   );
   assert.match(nav, />Press</);
   assert.doesNotMatch(html, /Copy biography/i);
+  assert.match(html, /<a class="sequence-more" href="#about">Full bio<\/a>/);
   assert.match(html, /PhD · he\/him/);
   assert.match(html, /I practice AI risk management inside a large bank\. Everything else I do, from research to auditing to policy, comes back to improving the practice itself\./);
   assert.match(html, /For collaborations or speaking, the fastest way to reach me is email or LinkedIn\./);
@@ -40,16 +41,17 @@ test("approved information architecture and content are present", () => {
 });
 
 test("section numbering and curated record counts are exact", () => {
-  const writing = section("writing", "speaking");
-  const speaking = section("speaking", "press");
-  const press = section("press", "contact");
+  const speaking = section("speaking", "writing");
+  const writing = section("writing", "press");
+  const press = section("press", "about");
+  const about = section("about", "contact");
   const contact = section("contact");
 
-  assert.match(writing, /sequence-section-number">01</);
-  assert.match(speaking, /sequence-section-number">02</);
+  assert.match(speaking, /sequence-section-number">01</);
+  assert.match(writing, /sequence-section-number">02</);
   assert.match(press, /sequence-section-number">03</);
-  assert.match(contact, /sequence-section-number">04</);
-  assert.doesNotMatch(html, /sequence-section-number">05</);
+  assert.match(about, /sequence-section-number">04</);
+  assert.match(contact, /sequence-section-number">05</);
   assert.equal(recordCount(writing), 14);
   assert.equal(recordCount(speaking), 15);
   assert.equal(recordCount(press), 0);
@@ -57,7 +59,7 @@ test("section numbering and curated record counts are exact", () => {
 });
 
 test("press is a single linked pull-quote card", () => {
-  const press = section("press", "contact");
+  const press = section("press", "about");
   const links = [...press.matchAll(/<a\b[^>]*href="([^"]+)"/g)];
 
   assert.equal(links.length, 1);
@@ -82,10 +84,15 @@ test("publication and speaking curation matches approved decisions", () => {
 });
 
 test("biography and podcast copy match approved presentation", () => {
-  const about = section("about", "writing");
+  const top = section("top", "speaking");
+  const about = section("about", "contact");
   const dataAndSocietyLinks = about.match(/<a href="https:\/\/datasociety\.net\/">Data &amp; Society<\/a>/g) ?? [];
   const magicGrantLinks = about.match(/<a href="https:\/\/brown\.columbia\.edu\/announcing-2023-magic-grants\/">Magic Grant<\/a>/g) ?? [];
 
+  assert.match(top, /I practice AI risk management inside a large bank\. Everything else I do, from research to auditing to policy, comes back to improving the practice itself\./);
+  assert.doesNotMatch(top, /Today, I'm an applied machine learning scientist/);
+  assert.doesNotMatch(about, /I practice AI risk management inside a large bank/);
+  assert.match(about, /Today, I'm an applied machine learning scientist/);
   assert.equal(dataAndSocietyLinks.length, 1);
   assert.equal(magicGrantLinks.length, 1);
   assert.match(
@@ -119,7 +126,7 @@ test("local assets exist and production config publishes only the static site", 
 
   assert.match(netlify, /publish\s*=\s*"site"/);
   assert.match(netlify, /command\s*=\s*"npm test"/);
-  assert.match(javascript, /"about", "writing", "speaking", "press", "contact"/);
+  assert.match(javascript, /"speaking", "writing", "press", "about", "contact"/);
 });
 
 test("locked type, colors, mobile navigation, and reduced motion remain intact", () => {
@@ -132,6 +139,8 @@ test("locked type, colors, mobile navigation, and reduced motion remain intact",
   assert.doesNotMatch(css, /font-weight: 600/);
   assert.match(css, /\.sq-record-lead \{[^}]*font-size: clamp\(1\.08rem, 1\.35vw, 1\.25rem\);[^}]*line-height: 1\.7;[^}]*font-weight: 400;/);
   assert.match(css, /\.sq-record-quote p \{[^}]*font-size: clamp\(1\.5rem, 2\.6vw, 2\.15rem\);[^}]*line-height: 1\.34;[^}]*font-weight: 400;[^}]*font-style: italic;/);
+  assert.match(css, /\.sequence-more \{[^}]*border: 1px solid var\(--ink\);[^}]*font-size: \.72rem;[^}]*text-transform: uppercase;/);
+  assert.match(css, /\.sequence-contact > p \{[^}]*font-size: clamp\(1\.1rem, 1\.4vw, 1\.3rem\);[^}]*line-height: 1\.72;[^}]*font-weight: 400;/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*?\.sequence-brand \{ display: none; \}/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*?\.sq-record-link \{ grid-template-columns: 1fr;/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);

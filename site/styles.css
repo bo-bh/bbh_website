@@ -80,6 +80,8 @@ main, footer { width: min(var(--page), calc(100% - 2.5rem)); margin-inline: auto
 .sequence-bio p:last-child { margin-bottom: 0; }
 .sequence-bio a { text-decoration: underline; text-decoration-color: var(--periwinkle); text-decoration-thickness: 1.5px; text-underline-offset: .16em; transition: text-decoration-thickness 120ms ease; }
 .sequence-bio a:hover { text-decoration-thickness: 2.5px; }
+.sequence-more { display: inline-flex; margin-top: 1.8rem; padding: .65rem 1rem; border: 1px solid var(--ink); background: transparent; color: var(--ink); font-family: "IBM Plex Mono", monospace; font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; text-decoration: none; transition: background 160ms ease, color 160ms ease; }
+.sequence-more:hover { background: var(--ink); color: var(--dusty); }
 
 .sequence-section { position: relative; padding: clamp(4.5rem, 8vw, 8rem) 0; border-bottom: 1px solid var(--lichen); }
 .sequence-section-header { margin-bottom: clamp(2.2rem, 4vw, 3.2rem); }
@@ -121,7 +123,7 @@ main, footer { width: min(var(--page), calc(100% - 2.5rem)); margin-inline: auto
 .sq-record:hover .sq-record-source, .sq-record:focus-within .sq-record-source { background-size: 100% 1.5px; }
 .sq-record-source span { color: var(--accent); }
 
-.sequence-contact > p { max-width: 46rem; margin: 0 0 1.8rem; font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.6; }
+.sequence-contact > p { max-width: 46rem; margin: 0 0 1.8rem; color: var(--ink); font-size: clamp(1.1rem, 1.4vw, 1.3rem); line-height: 1.72; font-weight: 400; }
 .sequence-contact > div { display: flex; flex-wrap: wrap; gap: .7rem; }
 .sequence-contact a { display: inline-flex; align-items: center; gap: .4rem; padding: .8rem 1rem; border: 1px solid var(--ink); color: var(--ink); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; text-decoration: none; transition: background 160ms ease, color 160ms ease; }
 .sequence-contact a:hover { background: var(--ink); color: var(--dusty); }
@@ -158,5 +160,5 @@ footer a span { color: var(--periwinkle); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .sequence-nav nav a, .sequence-progress > span, .sequence-bio a, .sequence-record, .sequence-record-main h3 a, .sequence-access a, .sq-record, .sq-record-source, .sequence-contact a { transition: none; }
+  .sequence-nav nav a, .sequence-progress > span, .sequence-bio a, .sequence-more, .sequence-record, .sequence-record-main h3 a, .sequence-access a, .sq-record, .sq-record-source, .sequence-contact a { transition: none; }
 }

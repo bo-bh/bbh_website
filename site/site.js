@@ -1,4 +1,4 @@
-const sectionIds = ["about", "writing", "speaking", "press", "contact"];
+const sectionIds = ["speaking", "writing", "press", "about", "contact"];
 const navLinks = [...document.querySelectorAll(".sequence-nav nav a")];
 const progress = document.querySelector(".sequence-progress > span");
 
