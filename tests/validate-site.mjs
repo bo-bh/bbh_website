@@ -33,7 +33,8 @@ test("approved information architecture and content are present", () => {
   assert.doesNotMatch(html, /Copy biography/i);
   assert.match(html, /<a class="sequence-more" href="#about">Full bio<\/a>/);
   assert.match(html, /PhD · he\/him/);
-  assert.match(html, /I practice AI risk management inside a large bank\. Everything else I do, from research to auditing to policy, comes back to improving the practice itself\./);
+  assert.match(html, /I practice AI risk management inside a large bank\. Everything else I do, from research to assurance to policy, comes back to improving the practice itself\./);
+  assert.doesNotMatch(html, /from research to auditing to policy/);
   assert.match(html, /For collaborations or speaking, the fastest way to reach me is email or LinkedIn\./);
   assert.doesNotMatch(html, /For collaborations, reviews, or speaking/);
   assert.match(html, /mailto:borhane\.blilihamelin@gmail\.com/);
@@ -89,7 +90,7 @@ test("biography and podcast copy match approved presentation", () => {
   const dataAndSocietyLinks = about.match(/<a href="https:\/\/datasociety\.net\/">Data &amp; Society<\/a>/g) ?? [];
   const magicGrantLinks = about.match(/<a href="https:\/\/brown\.columbia\.edu\/announcing-2023-magic-grants\/">Magic Grant<\/a>/g) ?? [];
 
-  assert.match(top, /I practice AI risk management inside a large bank\. Everything else I do, from research to auditing to policy, comes back to improving the practice itself\./);
+  assert.match(top, /I practice AI risk management inside a large bank\. Everything else I do, from research to assurance to policy, comes back to improving the practice itself\./);
   assert.doesNotMatch(top, /Today, I'm an applied machine learning scientist/);
   assert.doesNotMatch(about, /I practice AI risk management inside a large bank/);
   assert.match(about, /Today, I'm an applied machine learning scientist/);
