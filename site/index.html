@@ -18,8 +18,183 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Borhane Blili-Hamelin · AI Risk Management">
   <meta name="twitter:description" content="AI risk management, research, auditing, and technical model review.">
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/site.js" defer></script>
+  <style data-site-styles>
+  @font-face {
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/fonts/ibm-plex-mono-latin-300-italic.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/ibm-plex-mono-latin-400-italic.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/fonts/ibm-plex-mono-latin-500-italic.woff2") format("woff2");
+  }
+
+  :root {
+    --dusty: #c3c3b4;
+    --ink: #25281f;
+    --periwinkle: #7a6ce8;
+    --accent: var(--periwinkle);
+    --lichen: #5c5f52;
+    --page: 1180px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+  body { margin: 0; background: var(--dusty); color: var(--ink); font-family: "IBM Plex Mono", monospace; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--periwinkle); outline-offset: 4px; }
+  ::selection { background: var(--periwinkle); color: #f1f0e8; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .skip-link { position: fixed; z-index: 40; top: -5rem; left: 1rem; padding: .7rem 1rem; background: var(--ink); color: var(--dusty); text-decoration: none; font-size: .72rem; letter-spacing: .06em; }
+  .skip-link:focus { top: 1rem; }
+
+  .sequence-nav { position: sticky; z-index: 25; top: 0; min-height: 4.2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 0 max(1.25rem, calc((100vw - var(--page)) / 2)); border-bottom: 1px solid var(--lichen); background: color-mix(in srgb, var(--dusty) 82%, transparent); backdrop-filter: blur(12px); }
+  .sequence-brand { display: inline-flex; align-items: center; color: var(--periwinkle); font-size: .82rem; letter-spacing: .01em; text-decoration: none; white-space: nowrap; }
+  .wordmark-caret { margin-left: .1em; animation: markblink 1.05s steps(1) infinite; }
+  @keyframes markblink { 0%, 52% { opacity: 1; } 53%, 100% { opacity: 0; } }
+  .sequence-nav nav { display: flex; gap: clamp(.8rem, 2vw, 2.2rem); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; }
+  .sequence-nav nav a { padding-bottom: .35rem; border-bottom: 1.5px solid transparent; text-decoration: none; transition: border-color 160ms ease; }
+  .sequence-nav nav a:hover, .sequence-nav nav a.is-active { border-bottom-color: var(--periwinkle); }
+  .sequence-progress { position: absolute; left: 0; right: 0; bottom: -2px; display: block; width: 100%; height: 2px; background: color-mix(in srgb, var(--lichen) 34%, transparent); overflow: hidden; pointer-events: none; }
+  .sequence-progress > span { display: block; width: 100%; height: 100%; background: var(--periwinkle); transform: scaleX(0); transform-origin: left; transition: transform 100ms linear; }
+
+  main, footer { width: min(var(--page), calc(100% - 2.5rem)); margin-inline: auto; }
+  .sequence-about { padding-bottom: clamp(5rem, 9vw, 8rem); }
+  .sequence-hero { min-height: 55vh; display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding: clamp(3rem, 6vw, 5rem) 0; overflow: hidden; }
+  .sequence-hero h1 { margin: 0; font-size: clamp(3.5rem, 8.5vw, 7.25rem); line-height: 1; letter-spacing: -.025em; font-weight: 300; font-style: italic; font-feature-settings: "ss01"; }
+  .hero-name-glyphs { display: flex; flex-direction: column; }
+  .hero-name-line { white-space: nowrap; }
+  .hero-name-line:first-child { align-self: flex-start; }
+  .hero-name-line:last-child { align-self: flex-end; }
+  .hero-name-glyph { display: inline-block; color: var(--ink); transition: color 380ms ease; }
+  .hero-name-glyph.is-pending { color: var(--lichen); opacity: .3; }
+  .hero-name-glyph.is-cursor { color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, transparent); border-radius: 2px; animation: caretblink 900ms steps(1) infinite; }
+  @keyframes caretblink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: .4; } }
+  .sequence-hero > p { align-self: flex-end; display: inline-flex; align-items: center; gap: .6rem; width: max-content; margin: clamp(2rem, 5vw, 3.5rem) 0 0; color: var(--lichen); font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; white-space: nowrap; }
+  .sequence-hero > p > span { width: 1.6rem; height: 1px; background: var(--lichen); }
+  .sequence-about-copy { width: min(720px, 100%); margin-left: auto; }
+  .sequence-bio { font-size: clamp(1.1rem, 1.4vw, 1.3rem); line-height: 1.72; }
+  .sequence-bio p { margin: 0 0 1.4em; }
+  .sequence-bio p:last-child { margin-bottom: 0; }
+  .sequence-bio a { text-decoration: underline; text-decoration-color: var(--periwinkle); text-decoration-thickness: 1.5px; text-underline-offset: .16em; transition: text-decoration-thickness 120ms ease; }
+  .sequence-bio a:hover { text-decoration-thickness: 2.5px; }
+  .sequence-more { display: inline-flex; margin-top: 1.8rem; padding: .65rem 1rem; border: 1px solid var(--ink); background: transparent; color: var(--ink); font-family: "IBM Plex Mono", monospace; font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; text-decoration: none; transition: background 160ms ease, color 160ms ease; }
+  .sequence-more:hover { background: var(--ink); color: var(--dusty); }
+
+  .sequence-section { position: relative; padding: clamp(4.5rem, 8vw, 8rem) 0; border-bottom: 1px solid var(--lichen); }
+  .sequence-section-header { margin-bottom: clamp(2.2rem, 4vw, 3.2rem); }
+  .sequence-section-rule { display: block; height: 2px; background: var(--ink); }
+  .sequence-section-header > div { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-top: .85rem; color: var(--lichen); font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; }
+  .sequence-section-number { display: inline-block; padding: .14rem .5rem; background: var(--periwinkle); color: var(--ink); }
+  .sequence-section-header h2 { margin: .5rem 0 0; font-size: clamp(3rem, 7vw, 6rem); line-height: .92; letter-spacing: -.02em; font-weight: 400; font-style: italic; }
+  .sequence-records { display: flex; flex-direction: column; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+  .sequence-year { position: sticky; z-index: 16; top: 4.2rem; display: flex; align-items: center; gap: 1rem; margin: 2.2rem 0 .6rem; padding: .5rem 0; background: color-mix(in srgb, var(--dusty) 92%, transparent); backdrop-filter: blur(10px); }
+  .sequence-year:first-child { margin-top: 0; }
+  .sequence-year > span { display: inline-flex; align-items: center; gap: .55rem; font-size: .78rem; font-weight: 500; letter-spacing: .14em; }
+  .sequence-year > span > i { width: .45rem; height: .45rem; background: var(--periwinkle); }
+  .sequence-year > i { flex: 1; height: 1px; background: var(--lichen); }
+  .sequence-record { display: grid; grid-template-columns: 2.4rem minmax(7rem, 11rem) 1fr auto; gap: 1.2rem; align-items: start; padding: clamp(1.4rem, 2.8vw, 2.4rem); border: 1px solid var(--ink); background: var(--dusty); transition: box-shadow 180ms ease, background 180ms ease; }
+  .sequence-record:hover, .sequence-record:focus-within { box-shadow: inset 3px 0 var(--periwinkle); background: color-mix(in srgb, var(--dusty) 82%, white); }
+  .sequence-record-number { color: var(--lichen); font-size: .66rem; letter-spacing: .06em; }
+  .sequence-record-date { min-height: 1em; color: var(--ink); font-size: .72rem; font-weight: 500; letter-spacing: .04em; }
+  .sequence-record-main h3 { margin: 0; max-width: 60rem; font-size: clamp(1.2rem, 1.9vw, 1.6rem); line-height: 1.3; font-weight: 500; }
+  .sequence-record-main h3 a { color: var(--ink); text-decoration: none; background-image: linear-gradient(var(--periwinkle), var(--periwinkle)); background-size: 0 1.5px; background-repeat: no-repeat; background-position: 0 92%; transition: background-size 220ms ease; }
+  .sequence-record-main h3 a:hover, .sequence-record-main h3 a:focus-visible { background-size: 100% 1.5px; }
+  .sequence-record-main h3 a span { margin-left: .4em; color: var(--periwinkle); font-size: .62em; vertical-align: .12em; }
+  .sequence-record-main p { margin: .55rem 0 0; color: var(--lichen); font-size: .74rem; line-height: 1.5; }
+  .sequence-access { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .45rem; }
+  .sequence-access a { display: inline-flex; gap: .25rem; padding: .28rem .48rem; border: 1px solid var(--lichen); color: var(--ink); font-size: .64rem; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; transition: border-color 140ms ease; }
+  .sequence-access a:hover { border-color: var(--periwinkle); }
+  .sequence-access a span { color: var(--periwinkle); }
+
+  .sq-record { margin: 0; border: 1px solid var(--ink); background: var(--dusty); transition: box-shadow 180ms ease, background 180ms ease; }
+  .sq-record:hover, .sq-record:focus-within { box-shadow: inset 3px 0 var(--accent); background: color-mix(in srgb, var(--dusty) 82%, white); }
+  .sq-record-link { display: grid; grid-template-columns: 2.4rem minmax(7rem, 11rem) 1fr; gap: 1.2rem; align-items: start; padding: clamp(1.8rem, 3.4vw, 3rem); color: var(--ink); text-decoration: none; }
+  .sq-record-index { color: var(--lichen); font-size: .66rem; letter-spacing: .06em; }
+  .sq-record-date { color: var(--ink); font-size: .72rem; font-weight: 500; letter-spacing: .04em; }
+  .sq-record-content { display: flex; flex-direction: column; gap: clamp(1.3rem, 2.4vw, 2rem); max-width: 52rem; }
+  .sq-record-lead { margin: 0; color: var(--ink); font-size: clamp(1.08rem, 1.35vw, 1.25rem); line-height: 1.7; font-weight: 400; text-wrap: pretty; }
+  .sq-record-quote { margin: 0; padding-left: clamp(1.2rem, 2vw, 1.9rem); border-left: 3px solid var(--accent); }
+  .sq-record-quote p { margin: 0; color: var(--ink); font-size: clamp(1.5rem, 2.6vw, 2.15rem); line-height: 1.34; letter-spacing: -.008em; font-weight: 400; font-style: italic; text-wrap: pretty; }
+  .sq-record-attribution { margin: 0; color: var(--lichen); font-size: .78rem; line-height: 1.65; letter-spacing: .02em; }
+  .sq-record-source { color: var(--ink); background-image: linear-gradient(var(--accent), var(--accent)); background-size: 0 1.5px; background-repeat: no-repeat; background-position: 0 92%; transition: background-size 220ms ease; }
+  .sq-record:hover .sq-record-source, .sq-record:focus-within .sq-record-source { background-size: 100% 1.5px; }
+  .sq-record-source span { color: var(--accent); }
+
+  .sequence-contact > p { max-width: 46rem; margin: 0 0 1.8rem; color: var(--ink); font-size: clamp(1.1rem, 1.4vw, 1.3rem); line-height: 1.72; font-weight: 400; }
+  .sequence-contact > div { display: flex; flex-wrap: wrap; gap: .7rem; }
+  .sequence-contact a { display: inline-flex; align-items: center; gap: .4rem; padding: .8rem 1rem; border: 1px solid var(--ink); color: var(--ink); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; text-decoration: none; transition: background 160ms ease, color 160ms ease; }
+  .sequence-contact a:hover { background: var(--ink); color: var(--dusty); }
+  .sequence-contact a span { color: var(--periwinkle); }
+  footer { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 2.2rem 0 5rem; color: var(--lichen); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; }
+  footer a { color: var(--ink); text-decoration: none; }
+  footer a span { color: var(--periwinkle); }
+
+  @media (max-width: 820px) {
+    .sequence-nav { min-height: 3.6rem; justify-content: center; gap: 0; padding: .7rem .75rem; }
+    .sequence-brand { display: none; }
+    .sequence-nav nav { display: flex; width: 100%; justify-content: space-between; gap: .4rem; font-size: clamp(.62rem, 2.7vw, .72rem); letter-spacing: .04em; white-space: nowrap; }
+    .sequence-hero { min-height: 42vh; }
+    .sequence-hero h1 { font-size: clamp(2.4rem, 10vw, 3.25rem); }
+    .sequence-section-header h2 { font-size: clamp(2.6rem, 14vw, 4.5rem); }
+    .sequence-year { top: 3.6rem; }
+    .sequence-record { grid-template-columns: 1fr; gap: .5rem; }
+    .sequence-record-number { display: none; }
+    .sequence-record-date.is-year-only { display: none; }
+    .sequence-access { justify-content: flex-start; }
+    .sq-record-link { grid-template-columns: 1fr; gap: .5rem; }
+    .sq-record-index { display: none; }
+    .sq-record-content { margin-top: .7rem; }
+    footer { flex-direction: column; }
+  }
+
+  @media (max-width: 430px) {
+    main, footer { width: min(var(--page), calc(100% - 1.5rem)); }
+    .sequence-nav nav { font-size: clamp(.6rem, 2.9vw, .67rem); letter-spacing: .025em; }
+    .sequence-hero h1 { font-size: clamp(2.3rem, 10.5vw, 2.75rem); }
+    .sequence-record { padding: 1.2rem; }
+    .sq-record-link { padding: 1.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .wordmark-caret { animation: none; opacity: 1; }
+    .hero-name-glyph { animation: none; transition: none; }
+    .sequence-nav nav a, .sequence-progress > span, .sequence-bio a, .sequence-more, .sequence-record, .sequence-record-main h3 a, .sequence-access a, .sq-record, .sq-record-source, .sequence-contact a { transition: none; }
+  }
+  </style>
+  <script src="/site.js?v=74975f52" defer></script>
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to content</a>

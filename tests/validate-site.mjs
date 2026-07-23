@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,7 +8,9 @@ import test from "node:test";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const site = join(root, "site");
 const html = readFileSync(join(site, "index.html"), "utf8");
-const css = readFileSync(join(site, "styles.css"), "utf8");
+const inlineStyles = html.match(/<style data-site-styles>([\s\S]*?)<\/style>/);
+assert.ok(inlineStyles, "Missing inline site styles");
+const css = inlineStyles[1];
 const javascript = readFileSync(join(site, "site.js"), "utf8");
 const netlify = readFileSync(join(root, "netlify.toml"), "utf8");
 
@@ -158,6 +161,16 @@ test("wordmark and animated hero name match the glyph-flair specification", () =
   assert.match(javascript, /mouseenter/);
   assert.match(javascript, /IntersectionObserver/);
   assert.match(javascript, /reducedMotion\.matches/);
+});
+
+test("critical presentation ships atomically with the HTML", () => {
+  const javascriptVersion = createHash("sha256").update(javascript).digest("hex").slice(0, 8);
+
+  assert.doesNotMatch(html, /<link\b[^>]*rel="stylesheet"/);
+  assert.ok(css.length > 10_000, "Inline stylesheet is unexpectedly small");
+  assert.equal(existsSync(join(site, "styles.css")), false);
+  assert.match(html, new RegExp(`<script src="/site\\.js\\?v=${javascriptVersion}" defer><\\/script>`));
+  assert.match(netlify, /for\s*=\s*"\/site\.js"[\s\S]*?Cache-Control\s*=\s*"public, max-age=31536000, immutable"/);
 });
 
 test("local assets exist and production config publishes only the static site", () => {
