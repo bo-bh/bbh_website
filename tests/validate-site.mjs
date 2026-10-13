@@ -56,7 +56,7 @@ test("section numbering and curated record counts are exact", () => {
   assert.match(press, /sequence-section-number">03</);
   assert.match(about, /sequence-section-number">04</);
   assert.match(contact, /sequence-section-number">05</);
-  assert.equal(recordCount(writing), 14);
+  assert.equal(recordCount(writing), 15);
   assert.equal(recordCount(speaking), 15);
   assert.equal(recordCount(press), 0);
   assert.match(press, /<figure class="sq-record">/);
